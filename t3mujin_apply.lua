@@ -11,7 +11,7 @@ end
 -- Function to duplicate and apply styles
 local function apply_styles_to_image(image)
   for _, style in ipairs(t3mujin_styles) do
-    local copy = dt.database.duplicate(image)
+    local copy = image:duplicate() -- <-- corrected line
     dt.styles.apply(style, copy)
     dt.tags.attach(style, copy)
   end
